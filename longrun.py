@@ -3,7 +3,8 @@ usage: python longrun.py SEED [RTOL]
 Starts from the same initial condition as shed.py (perturbation 0, s0/nu = 2 Re_c(h0)), integrates
 with DOP853 in segments of 1e4 up to T=1e6, and records for every segment the solver status,
 message and actual end time. A run is called settled from the first segment end at which the
-vorticity norm is below 1e-6. Writes long{SEED}_rtol{RTOL}.json."""
+vorticity norm is below 1e-6 and the spectral abscissa at the current harmonic coefficient is negative
+(the criterion of Section 6). Writes long{SEED}_rtol{RTOL}.json."""
 import sys, json, numpy as np
 from scipy.integrate import solve_ivp
 from sat import irregular
@@ -18,9 +19,9 @@ for k in range(100):
     c = sol.y[:, -1]; t = float(sol.t[-1]); w = float(np.linalg.norm(K.d1 @ c)); a = float(h @ c)
     out.append(dict(t=t, success=bool(sol.success), message=sol.message, a_over_nu=a / nu, vort=w,
                     absc=absc(np.sign(a) * B, G, abs(a) / nu)))
-    if settled is None and w < 1e-6: settled = t
+    if settled is None and w < 1e-6 and out[-1]['absc'] < 0: settled = t
     if not sol.success: break
-json.dump(dict(seed=SEED, rtol=RT, method='DOP853', Rc=Rc, s0_over_nu=2 * Rc, settle_criterion='vorticity < 1e-6',
+json.dump(dict(seed=SEED, rtol=RT, method='DOP853', Rc=Rc, s0_over_nu=2 * Rc, settle_criterion='vorticity < 1e-6 and negative spectral abscissa',
                settled_at=settled, all_success=all(o['success'] for o in out), t_end=t, traj=out),
           open(f'long{SEED}_rtol{RT:g}.json', 'w'), indent=0)
 print(SEED, RT, 'settled_at', settled, 'final a/nu', out[-1]['a_over_nu'], 'vort', out[-1]['vort'], 'absc', out[-1]['absc'], 'ok', all(o['success'] for o in out), 't_end', t)

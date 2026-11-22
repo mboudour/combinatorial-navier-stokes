@@ -4,7 +4,7 @@
 "method": "DOP853",
 "Rc": 153.77380230631553,
 "s0_over_nu": 307.54760461263106,
-"settle_criterion": "vorticity < 1e-6",
+"settle_criterion": "vorticity < 1e-6 and negative spectral abscissa",
 "settled_at": 60000.0,
 "all_success": true,
 "t_end": 1000000.0,

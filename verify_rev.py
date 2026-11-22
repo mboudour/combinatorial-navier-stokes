@@ -42,3 +42,13 @@ sol = solve_ivp(lambda t, c: K.rhs(c, nu), (0, 50), c0, rtol=1e-11, atol=1e-14, 
 ts = np.linspace(0, 50, 100)
 R['disc_H0_max_ratio'] = float(max(np.linalg.norm(sol.sol(t)) / (np.exp(-nu * mu * t) * np.linalg.norm(c0)) for t in ts))
 print(json.dumps(R, indent=1, default=lambda o: o.item() if hasattr(o, 'item') else str(o)))
+
+# Section 4: on a complex with H^2 != 0, the form can vanish on im(delta) with a nonzero diamond defect
+import itertools
+from diamond import Qform, diamonds, val
+K = SC([t for t in itertools.combinations(range(5), 3) if t != (2, 3, 4)])
+a = np.array([0, 0, 0, 0, 0, 0, 0, 1, -1, 1.])
+R2 = dict(dim_H2=int(len(K.T) - np.linalg.matrix_rank(K.d1)), div=float(np.abs(K.d0.T @ a).max()),
+          form_on_im_delta=float(np.abs(K.d1.T @ Qform(K, a) @ K.d1).max()),
+          defect_02_012_023=float(val(K, a, 1, 0) + val(K, a, 1, 2) + val(K, a, 3, 0) + val(K, a, 3, 2)))
+print(R2)

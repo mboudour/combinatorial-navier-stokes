@@ -12,4 +12,4 @@ L = [r"\begin{tabular}{rrrrrrrrr}", r"\toprule",
 for r in rows:
     L.append(f"{r['seed']} & {r['V']} & {r['E']} & {r['F']} & {float(r['mu']):.3f} & {float(r['defect']):.3f} & {float(r['maxReB']):.4f} & {rc(r,'p')} & {rc(r,'m')}\\\\")
 L += [r"\bottomrule", r"\end{tabular}"]
-open('paper/table_irregular.tex', 'w').write("\n".join(L) + "\n")
+import os; os.makedirs('paper', exist_ok=True); open('paper/table_irregular.tex', 'w').write("\n".join(L) + "\n")

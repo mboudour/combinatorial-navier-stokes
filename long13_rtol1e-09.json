@@ -1,603 +1,810 @@
 {
+"seed": 13,
+"rtol": 1e-09,
+"method": "DOP853",
 "Rc": 206.29145302607444,
 "s0_over_nu": 412.58290605214887,
+"settle_criterion": "vorticity < 1e-6",
+"settled_at": 690000.0,
+"all_success": true,
+"t_end": 1000000.0,
 "traj": [
 {
 "t": 10000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 412.2252601947046,
 "vort": 0.02146192316164113,
 "absc": 0.04129598485554942
 },
 {
 "t": 20000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 411.3090459004765,
 "vort": 0.016923634832567026,
 "absc": 0.042659259244273634
 },
 {
 "t": 30000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 410.3434610490096,
 "vort": 0.022891332738381263,
 "absc": 0.04408070063197023
 },
 {
 "t": 40000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 409.34155622945815,
 "vort": 0.020898804193610888,
 "absc": 0.04553898974609849
 },
 {
 "t": 50000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 408.29002015325216,
 "vort": 0.021364900459745036,
 "absc": 0.047051283158787593
 },
 {
 "t": 60000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 407.18677062608987,
 "vort": 0.022696375544129198,
 "absc": 0.04861783997844421
 },
 {
 "t": 70000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 406.0373339111316,
 "vort": 0.019323117667491927,
 "absc": 0.05022803983166502
 },
 {
 "t": 80000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 404.8271772695513,
 "vort": 0.02296581607402528,
 "absc": 0.051899063349816074
 },
 {
 "t": 90000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 403.5590019358379,
 "vort": 0.02313335161666517,
 "absc": 0.05362347963274339
 },
 {
 "t": 100000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 402.22894488727894,
 "vort": 0.023626985265815414,
 "absc": 0.05540261020058823
 },
 {
 "t": 110000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 400.8326240283419,
 "vort": 0.024781792882425158,
 "absc": 0.05723790396060166
 },
 {
 "t": 120000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 399.368006377168,
 "vort": 0.019253962392789738,
 "absc": 0.05912716457681588
 },
 {
 "t": 130000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 397.81473624042053,
 "vort": 0.028889341831428376,
 "absc": 0.06109066664425078
 },
 {
 "t": 140000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 396.18954285017105,
 "vort": 0.029260721795776972,
 "absc": 0.06310081425983738
 },
 {
 "t": 150000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 394.48281350283406,
 "vort": 0.0218134731988282,
 "absc": 0.06516299952596061
 },
 {
 "t": 160000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 392.66742683524546,
 "vort": 0.031108613361775197,
 "absc": 0.06730151181432742
 },
 {
 "t": 170000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 390.75859879726806,
 "vort": 0.0318408459211086,
 "absc": 0.06948891148424685
 },
 {
 "t": 180000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 388.7545625547994,
 "vort": 0.021345771943937854,
 "absc": 0.07171783981374291
 },
 {
 "t": 190000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 386.6077420285577,
 "vort": 0.03334232907076259,
 "absc": 0.0740286995671442
 },
 {
 "t": 200000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 384.3474948285578,
 "vort": 0.03457133580718034,
 "absc": 0.07637563711864616
 },
 {
 "t": 210000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 381.95923036987955,
 "vort": 0.028837489694625913,
 "absc": 0.07875955939109647
 },
 {
 "t": 220000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 379.41846825036885,
 "vort": 0.024510133118976613,
 "absc": 0.08118741019517028
 },
 {
 "t": 230000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 376.7081675787666,
 "vort": 0.03358121827004163,
 "absc": 0.08365415578935065
 },
 {
 "t": 240000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 373.8256031952309,
 "vort": 0.03275631736172007,
 "absc": 0.08613821515846971
 },
 {
 "t": 250000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 370.7441431376954,
 "vort": 0.03836353174708843,
 "absc": 0.08863472084857701
 },
 {
 "t": 260000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 367.46911790269314,
 "vort": 0.03760675311812974,
 "absc": 0.0911080970965551
 },
 {
 "t": 270000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 363.9692711519855,
 "vort": 0.029686319010785837,
 "absc": 0.09354650707170686
 },
 {
 "t": 280000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 360.20861131510486,
 "vort": 0.027282493339184078,
 "absc": 0.09593119174814085
 },
 {
 "t": 290000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 356.1512852668518,
 "vort": 0.043528415178051075,
 "absc": 0.09823103846506087
 },
 {
 "t": 300000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 351.82132134058116,
 "vort": 0.03854958822264027,
 "absc": 0.10037375354381212
 },
 {
 "t": 310000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 347.1403508313918,
 "vort": 0.04419581084293973,
 "absc": 0.1023294184855027
 },
 {
 "t": 320000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 342.08942624343774,
 "vort": 0.046819007577279324,
 "absc": 0.10402105088741465
 },
 {
 "t": 330000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 336.6424970132114,
 "vort": 0.04542284383659823,
 "absc": 0.10536095355079578
 },
 {
 "t": 340000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 330.7375140468733,
 "vort": 0.043415833050934834,
 "absc": 0.1062494058025617
 },
 {
 "t": 350000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 324.32945171280966,
 "vort": 0.03938907287031072,
 "absc": 0.10655473912729224
 },
 {
 "t": 360000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 317.3662669300806,
 "vort": 0.037568674901773194,
 "absc": 0.10611646207923098
 },
 {
 "t": 370000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 309.77103364839405,
 "vort": 0.04567441169931379,
 "absc": 0.104734237168114
 },
 {
 "t": 380000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 301.4563649350496,
 "vort": 0.06020868134793717,
 "absc": 0.10215409252132734
 },
 {
 "t": 390000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 292.4987222864239,
 "vort": 0.050703017768058974,
 "absc": 0.09814669571782184
 },
 {
 "t": 400000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 282.643043271651,
 "vort": 0.06271451957939883,
 "absc": 0.0922946689481976
 },
 {
 "t": 410000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 272.0865016191742,
 "vort": 0.052121194175299555,
 "absc": 0.08438812414457185
 },
 {
 "t": 420000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 260.68835823799407,
 "vort": 0.06090134969905145,
 "absc": 0.0740004779470965
 },
 {
 "t": 430000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 248.73573077512668,
 "vort": 0.045731160062263285,
 "absc": 0.06110943890373299
 },
 {
 "t": 440000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 236.53059374574957,
 "vort": 0.05699898667196769,
 "absc": 0.045913900055775864
 },
 {
 "t": 450000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 225.0676881208018,
 "vort": 0.04520777415996502,
 "absc": 0.02985040307305048
 },
 {
 "t": 460000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 215.63462503284651,
 "vort": 0.038218177855172106,
 "absc": 0.01538586881052778
 },
 {
 "t": 470000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 209.29415633183956,
 "vort": 0.03507657553805495,
 "absc": 0.005056709305595042
 },
 {
 "t": 480000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 205.95370545046808,
 "vort": 0.022444311963249558,
 "absc": -0.0005753110415340768
 },
 {
 "t": 490000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 204.44415197967623,
 "vort": 0.014260335463453122,
 "absc": -0.003162638123242134
 },
 {
 "t": 500000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.83357204834164,
 "vort": 0.009057405005505715,
 "absc": -0.004216542233903914
 },
 {
 "t": 510000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.59729456285783,
 "vort": 0.005488137422334398,
 "absc": -0.0046255110412274925
 },
 {
 "t": 520000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.5070338020153,
 "vort": 0.003414961895479135,
 "absc": -0.004781909114544236
 },
 {
 "t": 530000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.47289240392942,
 "vort": 0.002096559079032925,
 "absc": -0.004841091224609739
 },
 {
 "t": 540000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45999076024336,
 "vort": 0.0012990140895221575,
 "absc": -0.004863458906835039
 },
 {
 "t": 550000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45512535924803,
 "vort": 0.000799398833824882,
 "absc": -0.004871894581125247
 },
 {
 "t": 560000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45328997315013,
 "vort": 0.0004935969822848648,
 "absc": -0.00487507685910582
 },
 {
 "t": 570000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.4525979414481,
 "vort": 0.00030365646057402555,
 "absc": -0.004876276745842012
 },
 {
 "t": 580000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45233695078386,
 "vort": 0.00018697147559674146,
 "absc": -0.004876729268765423
 },
 {
 "t": 590000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.4522385327304,
 "vort": 0.00011487060626230215,
 "absc": -0.004876899912716892
 },
 {
 "t": 600000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45220141547196,
 "vort": 7.055800873471239e-05,
 "absc": -0.00487696426918971
 },
 {
 "t": 610000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45218741730022,
 "vort": 4.327356647899051e-05,
 "absc": -0.0048769885401859225
 },
 {
 "t": 620000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45218213779748,
 "vort": 2.6522064956862136e-05,
 "absc": -0.0048769976941637205
 },
 {
 "t": 630000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45218014658184,
 "vort": 1.623614359235236e-05,
 "absc": -0.0048770011466653385
 },
 {
 "t": 640000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217939555536,
 "vort": 9.931466096438811e-06,
 "absc": -0.0048770024488487
 },
 {
 "t": 650000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217911229003,
 "vort": 6.069271963035614e-06,
 "absc": -0.004877002939996378
 },
 {
 "t": 660000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217900544984,
 "vort": 3.706322150599309e-06,
 "absc": -0.004877003125235979
 },
 {
 "t": 670000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217896515257,
 "vort": 2.261727085905608e-06,
 "absc": -0.004877003195112806
 },
 {
 "t": 680000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894995358,
 "vort": 1.3794174454685786e-06,
 "absc": -0.00487700322146295
 },
 {
 "t": 690000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.452178944221,
 "vort": 8.409141274800954e-07,
 "absc": -0.004877003231409938
 },
 {
 "t": 700000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.452178942059,
 "vort": 5.124703563284105e-07,
 "absc": -0.0048770032351552195
 },
 {
 "t": 710000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894124366,
 "vort": 3.1226029442591895e-07,
 "absc": -0.004877003236567645
 },
 {
 "t": 720000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894093608,
 "vort": 1.902689947981874e-07,
 "absc": -0.004877003237092892
 },
 {
 "t": 730000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894082012,
 "vort": 1.1595670195389291e-07,
 "absc": -0.004877003237304889
 },
 {
 "t": 740000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894077643,
 "vort": 7.068836640394643e-08,
 "absc": -0.004877003237376998
 },
 {
 "t": 750000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.4521789407599,
 "vort": 4.311610666638683e-08,
 "absc": -0.004877003237404809
 },
 {
 "t": 760000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.4521789407537,
 "vort": 2.6317063886205915e-08,
 "absc": -0.004877003237414801
 },
 {
 "t": 770000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894075134,
 "vort": 1.6076561317761725e-08,
 "absc": -0.004877003237416189
 },
 {
 "t": 780000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894075046,
 "vort": 9.832283045149468e-09,
 "absc": -0.004877003237421684
 },
 {
 "t": 790000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894075006,
 "vort": 6.017069702813807e-09,
 "absc": -0.00487700323742446
 },
 {
 "t": 800000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074992,
 "vort": 3.687961923875894e-09,
 "absc": -0.004877003237424127
 },
 {
 "t": 810000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074983,
 "vort": 2.2621155991679993e-09,
 "absc": -0.004877003237422073
 },
 {
 "t": 820000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074992,
 "vort": 1.3883955573511096e-09,
 "absc": -0.004877003237424127
 },
 {
 "t": 830000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074992,
 "vort": 8.554101323313298e-10,
 "absc": -0.004877003237424127
 },
 {
 "t": 840000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074992,
 "vort": 5.261427850368293e-10,
 "absc": -0.004877003237424127
 },
 {
 "t": 850000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074986,
 "vort": 3.246104293267722e-10,
 "absc": -0.00487700323742396
 },
 {
 "t": 860000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074983,
 "vort": 2.0097011657951014e-10,
 "absc": -0.004877003237422073
 },
 {
 "t": 870000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074983,
 "vort": 1.6280457468915399e-10,
 "absc": -0.004877003237422073
 },
 {
 "t": 880000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074983,
 "vort": 8.89560125302901e-11,
 "absc": -0.004877003237422073
 },
 {
 "t": 890000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074983,
 "vort": 8.769917755079172e-11,
 "absc": -0.004877003237422073
 },
 {
 "t": 900000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074983,
 "vort": 3.153707447997258e-11,
 "absc": -0.004877003237422073
 },
 {
 "t": 910000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074977,
 "vort": 1.8839789922292732e-11,
 "absc": -0.004877003237422128
 },
 {
 "t": 920000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074977,
 "vort": 1.1560334871198542e-11,
 "absc": -0.004877003237422128
 },
 {
 "t": 930000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074977,
 "vort": 2.407447295749851e-11,
 "absc": -0.004877003237422128
 },
 {
 "t": 940000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074975,
 "vort": 4.80902734508501e-12,
 "absc": -0.004877003237420796
 },
 {
 "t": 950000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074975,
 "vort": 4.888368662433467e-12,
 "absc": -0.004877003237420796
 },
 {
 "t": 960000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074975,
 "vort": 1.505576872995734e-11,
 "absc": -0.004877003237420796
 },
 {
 "t": 970000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.45217894074975,
 "vort": 9.347046652709973e-12,
 "absc": -0.004877003237420796
 },
 {
 "t": 980000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.4521789407497,
 "vort": 9.18481639323993e-12,
 "absc": -0.004877003237424404
 },
 {
 "t": 990000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.4521789407497,
 "vort": 6.255188772064243e-11,
 "absc": -0.004877003237424404
 },
 {
 "t": 1000000.0,
+"success": true,
+"message": "The solver successfully reached the end of the integration interval.",
 "a_over_nu": 203.4521789407497,
 "vort": 4.617589995304257e-12,
 "absc": -0.004877003237424404

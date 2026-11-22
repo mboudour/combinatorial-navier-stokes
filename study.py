@@ -55,9 +55,11 @@ def main():
       spearman_Rcmin_mu=list(map(float, spearmanr(Rmin, [r['mu'] for r in rows]))),
       spearman_Rcmin_maxReB=list(map(float, spearmanr(Rmin, [r['maxReB'] for r in rows]))))
 
-  # re-entry example: seed 13, negative orientation
-  K = irregular(13); B, G = ops(K, -K.h0())
-  OUT['reentry_seed13_minus'] = {str(r): absc(B, G, r) for r in (300, 450, 500, 600)}
+  # re-entry example: seed 13, positive orientation h0 (the direction used in the paper)
+  from scipy.optimize import brentq
+  K = irregular(13); B, G = ops(K, K.h0())
+  OUT['reentry_seed13_h0'] = dict(abscissa={str(r): absc(B, G, r) for r in (300, 450, 500, 600)},
+      window=[brentq(lambda r: absc(B, G, r), 430, 450), brentq(lambda r: absc(B, G, r), 500, 550)])
 
   # counterexample (four triangles)
   K = SC([(0, 1, 2), (0, 1, 3), (0, 2, 4), (1, 3, 4)])

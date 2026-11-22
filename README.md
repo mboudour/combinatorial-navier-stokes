@@ -15,7 +15,7 @@ The model is Wilson's finite cochain model of incompressible viscous flow on a s
 | `exp2.py` | Symmetric part of the transport on the regular complexes |
 | `diamond.py` | Diamonds, diamond defect, enstrophy quadratic form |
 | `sat.py` | Irregular complexes (`irregular(seed)`: 50 uniform points in [-1,1]^2, points with norm <= 0.35 dropped, Delaunay, triangles with centroid norm <= 0.4 removed) |
-| `checks.py` | Diamond formula (entrywise), flat-complex spectra, low-Re bound; writes `summary.json` |
+| `checks.py` | Diamond formula (entrywise), flat-complex spectra, small-data bound; writes `summary.json` |
 | `study.py` | First critical values for both orientations, stability windows, mesh table, Example 2, energy-identity residual; writes `study.json`, `table_irregular.csv` |
 | `shed.py` | Supercritical runs with coexact perturbations of norm 1e-3; appends records with a `run_id` to `shed_results.jsonl` |
 | `shed_summary.py` | Summary of `shed_results.jsonl` (one record per `run_id`; reproduces the counts in Section 6) |
@@ -33,13 +33,16 @@ rm -f shed_results.jsonl   # start from a fresh results file
 for m in 0.5 2 5; do python shed.py 3 $m 10; done
 for s in $(seq 1 30); do [ $s -ne 3 ] && [ $s -ne 13 ] && python shed.py $s 2 3; done
 python shed.py 13 2 3 1e-9 DOP853
+python shed.py 3 5 2 1e-11            # tolerance check quoted in Section 6
 python longrun.py 13; python longrun.py 23; python longrun.py 9
 python longrun.py 13 1e-11; python longrun.py 23 1e-11
 python shed_summary.py; python figs2.py
 python verify.py; python verify_flat.py; python verify_rev.py
 ```
 
-Tested with Python 3.13, NumPy 2.5, SciPy 1.18 and Matplotlib 3.11.
+Results were produced, and re-run bit-identically, with Python 3.13, NumPy 2.5.3, SciPy 1.18.1 and Matplotlib 3.11.2 (pinned in `requirements.txt`).
+
+The archived `shed_results.jsonl` was produced before records carried a `run_id`; `shed_summary.py` builds the same identifier from seed, multiplier, perturbation, tolerance and method, and reruns of individual records with the current `shed.py` reproduce them bit for bit.
 
 ## License
 

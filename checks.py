@@ -1,5 +1,4 @@
-"""Identity checks: diamond formula (entrywise), flat-complex spectra, first critical values with
-the raw SVD harmonic basis (superseded by study.py, which fixes the orientation), low-Re bound.
+"""Identity checks: diamond formula (entrywise), flat-complex spectra, low-Re bound.
 Writes summary.json."""
 import json, numpy as np, matplotlib
 matplotlib.use("Agg")
@@ -39,20 +38,7 @@ for name, K in [("flat torus 5x5", torus(5)), ("flat annulus 8x3", annulus(8, 3)
     h0 = K.H[:, 0]
     curves[name] = [np.max(np.linalg.eigvals(lin_op(K, s * h0, 1.0)).real) for s in ss]
     OUT[name] = dict(defect=float(diamond_defect(K, h0)), max_abscissa=float(max(curves[name])))
-Rc_list = []
-for seed in range(1, 31):
-    K = irregular(seed)
-    if K.betti1 != 1: continue
-    h0 = K.H[:, 0]
-    Rc, lam = crit(K, h0)
-    Y = orth(K.d1)
-    R = Y.T @ K.d1 @ np.einsum('fij,i->fj', K.W, h0).T @ Y
-    Rc_list.append(dict(seed=seed, E=len(K.E), F=len(K.T), defect=float(diamond_defect(K, h0)),
-                        Rc=None if Rc is None else float(Rc), hopf=None if lam is None else bool(abs(lam.imag) > 1e-6),
-                        traceR=float(np.trace(R)), maxReR=float(np.linalg.eigvals(R).real.max())))
-    if seed in (1, 3):
-        curves[f"irregular complex #{seed}"] = [np.max(np.linalg.eigvals(lin_op(K, s * h0, 1.0)).real) for s in ss]
-OUT["irregular"] = Rc_list
+# first critical values with the oriented basis are computed in study.py
 
 # ---- check 3: low-Reynolds theorem and flat-complex threshold ----
 K = irregular(1); d_max = max(np.count_nonzero(K.d1[:, e]) for e in range(len(K.E)))
@@ -66,7 +52,3 @@ OUT["lowRe"] = dict(CK=float(CK), mu=float(mu), max_ratio_to_bound=float(np.max(
 
 json.dump(OUT, open("summary.json", "w"), indent=1)
 print(json.dumps({k: v for k, v in OUT.items() if k != "irregular"}, indent=1))
-print("irregular: n=", len(Rc_list), " Rc range", min(r['Rc'] for r in Rc_list if r['Rc']), max(r['Rc'] for r in Rc_list if r['Rc']),
-      " all finite:", all(r['Rc'] for r in Rc_list), " hopf fraction", np.mean([r['hopf'] for r in Rc_list]),
-      " max|traceR|", max(abs(r['traceR']) for r in Rc_list), " min maxReR", min(r['maxReR'] for r in Rc_list))
-

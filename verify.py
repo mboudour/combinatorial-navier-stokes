@@ -36,13 +36,5 @@ c0 = K.P @ rng.normal(size=len(K.E)); c0 *= 0.8 * nu * np.sqrt(m) / CK / np.lina
 sol = solve_ivp(lambda t, c: K.rhs(c, nu), (0, 400), c0, rtol=1e-11, atol=1e-14)
 hinf = K.PH @ sol.y[:, -1]; gamma = nu - CK * np.linalg.norm(c0) / np.sqrt(m)
 R['thm2_exchange'] = dict(actual=float(np.linalg.norm(hinf - K.PH @ c0)), bound=float(CK * np.linalg.norm(c0) * np.linalg.norm(K.d1 @ c0) / (m * gamma)))
-# Theorem 3 on flat torus: huge circulation, vorticity below threshold
-K = torus(5); CK = np.sqrt(dK(K)/3); m = mu(K); nu = 0.01
-v = K.P @ rng.normal(size=len(K.E)); v -= K.PH @ v
-v *= 0.5 * nu * m / CK / np.linalg.norm(K.d1 @ v)
-c0 = 1e3 * K.H[:, 0] + v
-w0 = np.linalg.norm(K.d1 @ c0); rate = m * (nu - CK * w0 / m)
-sol = solve_ivp(lambda t, c: K.rhs(c, nu), (0, 2000), c0, rtol=1e-10, atol=1e-13, dense_output=True)
-ts = np.linspace(0, 2000, 400); om = np.array([np.linalg.norm(K.d1 @ sol.sol(t)) for t in ts])
-R['thm3_flat'] = dict(circulation_over_nu=float(1e3 / nu), max_ratio_to_bound=float(np.max(om / (w0 * np.exp(-rate * ts)))), monotone=bool(np.all(np.diff(om) <= 1e-12)))
+# Theorem 3 is checked in verify_flat.py
 print(R)

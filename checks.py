@@ -1,3 +1,6 @@
+"""Identity checks: diamond formula (entrywise), flat-complex spectra, first critical values with
+the raw SVD harmonic basis (superseded by study.py, which fixes the orientation), low-Re bound.
+Writes summary.json."""
 import json, numpy as np, matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -61,33 +64,9 @@ ts = np.linspace(0, 60, 200); om = np.array([np.linalg.norm(K.d1 @ sol.sol(t)) f
 gamma = mu * (nu - CK * np.linalg.norm(c0) / np.sqrt(mu))
 OUT["lowRe"] = dict(CK=float(CK), mu=float(mu), max_ratio_to_bound=float(np.max(om / (om[0] * np.exp(-gamma * ts)))))
 
-# ---- experiment: shedding of supercritical circulation ----
-K = irregular(3); h0 = K.H[:, 0]; Rc, _ = crit(K, h0); Rcm, _ = crit(K, -h0)
-nu = 0.01; traj = {}
-for A in [0.5, 2.0, 5.0]:
-    c0 = A * Rc * nu * h0 + 1e-3 * (K.P @ np.random.default_rng(0).normal(size=len(K.E)))
-    sol = solve_ivp(lambda t, c: K.rhs(c, nu), (0, 3e4), c0, rtol=1e-9, atol=1e-12, method='LSODA', dense_output=True)
-    tt = np.geomspace(1, 3e4, 300)
-    traj[A] = (tt, [(h0 @ sol.sol(t)) / nu for t in tt], [np.linalg.norm(sol.sol(t)) for t in tt])
-OUT["shedding"] = dict(Rc_plus=float(Rc), Rc_minus=float(Rcm), final={str(A): float(v[1][-1]) for A, v in traj.items()})
 json.dump(OUT, open("summary.json", "w"), indent=1)
 print(json.dumps({k: v for k, v in OUT.items() if k != "irregular"}, indent=1))
 print("irregular: n=", len(Rc_list), " Rc range", min(r['Rc'] for r in Rc_list if r['Rc']), max(r['Rc'] for r in Rc_list if r['Rc']),
       " all finite:", all(r['Rc'] for r in Rc_list), " hopf fraction", np.mean([r['hopf'] for r in Rc_list]),
       " max|traceR|", max(abs(r['traceR']) for r in Rc_list), " min maxReR", min(r['maxReR'] for r in Rc_list))
 
-fig, ax = plt.subplots(1, 2, figsize=(6.6, 2.6))
-sty = {"flat torus 5x5": ("--", "0.5"), "flat annulus 8x3": (":", "0.5"),
-       "irregular complex #1": ("-", "k"), "irregular complex #3": ("-.", "k")}
-for name, v in curves.items():
-    ax[0].semilogx(ss, v, ls=sty[name][0], color=sty[name][1], label=name)
-ax[0].set_yscale("symlog", linthresh=1.0)
-ax[0].axhline(0, color="0.8", lw=0.6)
-ax[0].set_xlabel(r"$\mathrm{Re}=s/\nu$ (unit harmonic $h_0$)"); ax[0].set_ylabel("spectral abscissa")
-ax[0].legend(frameon=False, fontsize=6.5); ax[0].set_title("(a) linear stability of $s h_0$", fontsize=9)
-for A, (tt, a, e) in traj.items():
-    ax[1].semilogx(tt, a, label=rf"$s_0/\nu={A*Rc:.0f}$")
-ax[1].axhline(Rc, color="0.6", ls=":", lw=0.8); ax[1].axhline(-Rcm, color="0.6", ls=":", lw=0.8)
-ax[1].set_xlabel("time"); ax[1].set_ylabel(r"$\langle c(t),h_0\rangle/\nu$")
-ax[1].legend(frameon=False, fontsize=6.5); ax[1].set_title("(b) shedding of supercritical circulation", fontsize=9)
-fig.tight_layout(); fig.savefig("fig_stability.pdf", metadata={"CreationDate": None})

@@ -8,7 +8,9 @@ from exp1 import lin_op
 def irregular(seed, n=50):
     rng = np.random.default_rng(seed)
     pts = rng.uniform(-1,1,(n,2)); pts = pts[np.linalg.norm(pts,axis=1)>0.35]
-    return SC([tuple(int(x) for x in s) for s in Delaunay(pts).simplices if np.linalg.norm(pts[s].mean(0))>0.4])
+    K = SC([tuple(int(x) for x in s) for s in Delaunay(pts).simplices if np.linalg.norm(pts[s].mean(0))>0.4])
+    K.pts = pts
+    return K
 
 def crit(K, h0, lo=0.0, hi=5000.0):
     f = lambda s: np.max(np.linalg.eigvals(lin_op(K, s*h0, 1.0)).real)

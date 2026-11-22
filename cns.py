@@ -34,6 +34,12 @@ class SC:
         H = null_space(np.vstack([self.d0.T, self.d1]))
         self.H = H; self.PH = H @ H.T
         self.betti1 = H.shape[1]
+    def h0(self, j=0):
+        """Unit harmonic cochain H[:, j], oriented so that its first entry (edges in
+        lexicographic order) with |value| > 1e-8 is positive."""
+        h = self.H[:, j].copy()
+        k = np.flatnonzero(np.abs(h) > 1e-8)[0]
+        return h if h[k] > 0 else -h
     def edge(self, a, b):
         return (self.ei[(a, b)], 1) if (a, b) in self.ei else (self.ei[(b, a)], -1)
     def cup(self, a, b):
